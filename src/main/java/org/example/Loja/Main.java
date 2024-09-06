@@ -5,7 +5,7 @@ public class Main {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
 
-        // Coletando informações do produto via terminal
+
         System.out.print("Digite o nome do produto: ");
         String nome = scanner.nextLine();
 
@@ -15,28 +15,40 @@ public class Main {
         System.out.print("Digite a quantidade em estoque: ");
         int quantidadeEstoque = scanner.nextInt();
 
-        // Criando o produto
-        Produto produto = new Produto(nome, preco, quantidadeEstoque);
-        produto.exibirProduto();
 
-        // Perguntar se o usuário quer aplicar desconto
+        Produto produto = new Produto(nome, preco, quantidadeEstoque);
+
+
+        exibirProduto(produto);
+
+
         System.out.print("\nDeseja aplicar um desconto? (sim/não): ");
-        scanner.nextLine(); // Consumir a quebra de linha restante
+        scanner.nextLine();
         String resposta = scanner.nextLine();
 
         if (resposta.equalsIgnoreCase("sim")) {
             System.out.print("Digite a porcentagem de desconto: ");
             double porcentagemDesconto = scanner.nextDouble();
 
-            // Aplicar o desconto, se for válido
+
             produto.aplicarDesconto(porcentagemDesconto);
-            produto.exibirProduto();
+
+
+            exibirProduto(produto);
         } else {
             System.out.println("Nenhum desconto foi aplicado.");
         }
 
         scanner.close();
 
+    }
+
+
+    public static void exibirProduto(Produto produto) {
+        System.out.println("\n=== Informações do Produto ===");
+        System.out.println("Nome do Produto: " + produto.getNome());
+        System.out.println("Preço: " + produto.getPreco());
+        System.out.println("Quantidade em Estoque: " + produto.getQtdEstoque());
     }
 
 }

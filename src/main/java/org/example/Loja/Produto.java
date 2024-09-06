@@ -53,10 +53,5 @@ public class Produto {
     }
 
 
-    public void exibirProduto() {
-        System.out.println("\n=== Informações do Produto ===");
-        System.out.println("Nome do Produto: " + nome);
-        System.out.println("Preço: " + preco);
-        System.out.println("Quantidade em Estoque: " + qtdEstoque);
-    }
+
 }
