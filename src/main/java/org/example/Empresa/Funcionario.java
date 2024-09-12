@@ -13,13 +13,14 @@ public class Funcionario {
         return 0;
     }
 
-    public String trabalhar(){
-        return "";
+    public void trabalhar(){
+        System.out.println(nome + "está realizando suas tarefas");
     }
 
     public void exibirDados(){
         System.out.println("Nome: " + nome);
         System.out.println("Salário: " + salario);
         System.out.println("Bônus: " + calcularBonus());
+        trabalhar();
     }
 }

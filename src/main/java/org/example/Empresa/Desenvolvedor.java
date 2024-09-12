@@ -8,4 +8,9 @@ public class Desenvolvedor extends Funcionario{
     public double calcularBonus(){
         return salario * 0.10;
     }
+
+    @Override
+    public void trabalhar(){
+        System.out.println(nome + " está desenvolvendo software.");
+    }
 }
